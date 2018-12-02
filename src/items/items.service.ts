@@ -1,12 +1,13 @@
 import { Injectable } from "@nestjs/common";
+import { Item } from "./item.interface";
 
 @Injectable()
 export class ItemsService{
-    private readonly items : string[] = ['pizza','coke'];
-    findAll(): string[] {
+    private readonly items : Item[] = [];
+    findAll(): Item[] {
         return this.items;
     }
-    create(item: string){
+    create(item: Item){
         this.items.push(item);
     }
 }
